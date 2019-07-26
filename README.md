@@ -1,4 +1,4 @@
-# MiScan_core
+# MiScan
 
 Maxout-inferred SNV-based cancer prediction model | Apache Software License
 
