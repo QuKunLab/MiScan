@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="MiScan",
-    version="0.1rc1",
+    version="1.0.0",
     author='Qulab USTC',
     author_email="jeffery_cpu@163.com",
     description="Maxout-inferred SNV-based cancer prediction model",
@@ -33,7 +33,7 @@ setuptools.setup(
     package_data={'': ['dependency_data/*.txt', 'dependency_data/*.bed']},
     include_package_data=True,
     classifiers=(
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Environment :: Console",
         "Intended Audience :: Education",
         "Intended Audience :: Science/Research",
