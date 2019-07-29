@@ -33,11 +33,14 @@ logger = get_logger(__name__)
 
 def vcf_to_sparse(outDir, inFeaID, inFeaBed, inVcf, featureID):
     """
+    convert the vcf to a feature matrix, `matrix.mtx`
 
-    :param outDir:
-    :param inFeaID:
-    :param inFeaBed:
-    :param inVcf:
+
+    :param outDir: output directory
+    :param inFeaID: `13885fea_exon_cut_100bp_2sample.txt` in dependency_data
+    :param inFeaBed: `tcga_13885fea_exon_cut_100bp.bed` in dependency_data
+    :param inVcf: the input vcf file path
+    :param featureID: `featureID.bed` in dependency_data
     :return:
     """
     logger.info('start converting Vcf to feature matrix')
@@ -97,6 +100,14 @@ def vcf_to_sparse(outDir, inFeaID, inFeaBed, inVcf, featureID):
 
 
 def prediction(outDir, model_weight):
+    """
+    predict single sample breast cancer risk
+
+    :param outDir: output directory
+    :param model_weight: the MiScan model weight file path
+    :return: (risk_to_be_patient, probability_to_be_normal)
+
+    """
     logger.info('start model evaluation')
     model = build_model()
     model.load_weights(model_weight)
@@ -109,6 +120,14 @@ def prediction(outDir, model_weight):
 
 
 def generate_report(inDir, outDir, y_pred_pat):
+    """
+    generate report for single sample, including Cancer Risk Prediction | Top Gene Mutation Sites
+
+    :param inDir: for historical reason, actually, it's the path of `MISCAN.norm.trainPred.txt` and 'MISCAN.pat.trainPred.txt' in dependency_data
+    :param outDir: output directory
+    :param y_pred_pat: risk_to_be_patient from func `prediction`
+    :return:
+    """
     logger.info('start generating report')
     fig, axes = plt.subplots(6, 1, figsize=(8, 8))
     axes[0].set_position(Bbox([[0.02, 0.4], [0.98, 0.93]]))
