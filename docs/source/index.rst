@@ -10,16 +10,10 @@ Miscan: Maxout-inferred SNV-based cancer prediction model | Apache Software Lice
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    installation
    tutorial
    references
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   functions
