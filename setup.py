@@ -7,13 +7,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="MiScan",
-    version="1.0.0",
+    version="1.0.0.post01",
     author='Qulab USTC',
     author_email="jeffery_cpu@163.com",
     description="Maxout-inferred SNV-based cancer prediction model",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/QuKunLab/MiScan",
     project_urls={
         'MiScan website': 'http://galaxy.ustc.edu.cn',
     },
