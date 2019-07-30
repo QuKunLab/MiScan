@@ -23,8 +23,10 @@ cloned version after you update with ``git pull``) call::
 Docker
 ~~~~~~
 
-If you're using Docker_, you can use::
+If you're using Docker_, you can use code below to get the newest image::
 
-    docker pull jefferyustc/miscan_command_line:v0.2.1
+    docker pull jefferyustc/miscan_command_line:latest
 
-or build the image through the DockerFile in the source code
+you can also select a image version from dockerHub_
+
+.. _dockerHub: https://hub.docker.com/

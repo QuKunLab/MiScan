@@ -22,9 +22,9 @@ sys.path.insert(0, str(HERE))
 project = 'MiScan'
 copyright = '2019, Qulab USTC'
 author = 'Qulab USTC'
-version = '1.0'
+version = '1.0.1'
 # The full version, including alpha/beta/rc tags
-release = '1.0.0.post01'
+release = '1.0.1'
 
 # -- General configuration ---------------------------------------------------
 
@@ -56,6 +56,8 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+master_doc = 'index'
 
 # other
 source_suffix = {
