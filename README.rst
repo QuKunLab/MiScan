@@ -15,8 +15,7 @@ MiScan
 ==========
 
 Maxout-inferred SNV-based cancer prediction model | Apache Software License, more info please see documentation_ or
-the website_ version, the same repo can be found on lab github QunKunLab_
+the website_ version
 
 .. _documentation: https://scanpy.readthedocs.io
 .. _website: http://qulab.ustc.edu.cn/miscan
-.. _QunKunLab: https://github.com/QuKunLab/MiScan
