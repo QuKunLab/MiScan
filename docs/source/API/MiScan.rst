@@ -1,4 +1,4 @@
-MiScan package
+MiScan
 ==============
 
 

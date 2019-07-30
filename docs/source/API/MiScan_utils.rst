@@ -1,4 +1,4 @@
-MiScan.utils package
+MiScanUtils
 ====================
 
 
@@ -9,3 +9,4 @@ Module contents
    :members:
    :undoc-members:
    :show-inheritance:
+

@@ -16,4 +16,7 @@ Miscan: Maxout-inferred SNV-based cancer prediction model | Apache Software Lice
    installation
    tutorial
    references
-   functions
+   API/index
+
+
+

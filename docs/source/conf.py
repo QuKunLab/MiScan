@@ -13,7 +13,7 @@
 import sys
 from pathlib import Path
 
-HERE = Path(__file__).parent.parent.parent
+HERE = Path(__file__).parent.parent
 
 sys.path.insert(0, str(HERE))
 
