@@ -4,7 +4,7 @@ import re
 import shutil
 import warnings
 from collections import Counter
-from os import makedirs, system, popen
+from os import makedirs, system, popen, environ
 from os.path import exists, join
 
 import keras.backend as K
@@ -27,7 +27,7 @@ from matplotlib.transforms import Bbox
 warnings.filterwarnings("ignore")
 mpl.rcParams['pdf.fonttype'] = 42
 mpl.rcParams["font.sans-serif"] = "Arial"
-
+environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 logger = get_logger(__name__)
 
 
@@ -142,7 +142,7 @@ def generate_report(inDir, outDir, y_pred_pat):
     axes[5].axis('off')
 
     axes[1].set_position(Bbox([[0.01, 0.8], [0.99, 0.88]]))
-    axes[1].text(0.01, 0.72, '1. Risk of breast cancer by MiScan', fontsize=20)
+    axes[1].text(0.01, 0.72, '1. Breast cancer risk predicted by MiScan', fontsize=20)
     axes[1].axis('off')
 
     axes[2].set_position(Bbox([[0.09, 0.57], [0.95, 0.83]]))
@@ -156,7 +156,7 @@ def generate_report(inDir, outDir, y_pred_pat):
                     shade=True, color='#ffb7ce')
     g = sns.kdeplot(list(trainNorm_ay), label='trainNorm', ax=axes[2],
                     shade=True, color='#95d0fc')
-    axes[2].set_xlabel('Probability of prediction', size=15)
+    axes[2].set_xlabel('Cancer risk', size=15)
     axes[2].set_ylabel('Density', size=15)
     for tick in axes[2].xaxis.get_major_ticks():
         tick.label.set_fontsize(12)
@@ -194,7 +194,7 @@ def generate_report(inDir, outDir, y_pred_pat):
                          size=15)
 
     axes[3].set_position(Bbox([[0.01, 0.4], [0.99, 0.5]]))
-    axes[3].text(0.01, 0.52, '2. Distribution of gene mutation sites covered by window', fontsize=20)
+    axes[3].text(0.01, 0.52, '2. Genes ranked by the number of mutations', fontsize=20)
     axes[3].axis('off')
 
     # Fig 2
@@ -217,13 +217,13 @@ def generate_report(inDir, outDir, y_pred_pat):
     axes[4].scatter(range(len(geneMutant_ls))[nb_show:nb_plot], mutantCount_ls[nb_show:nb_plot], s=12, marker='o', c='',
                     edgecolors='#a2cffe', label='Other mutated gene'.format(nb_show))
     axes[4].legend(loc='upper right')
-    axes[4].set_xlabel('Gene ranked by the number of mutated snvs', fontsize=15, labelpad=10)
-    axes[4].set_ylabel('The number of mutated snvs', fontsize=15)
+    axes[4].set_xlabel('Ranked genes', fontsize=15, labelpad=10)
+    axes[4].set_ylabel('The number of mutations', fontsize=15)
     for tick in axes[4].xaxis.get_major_ticks():
         tick.label.set_fontsize(12)
     for tick in axes[4].yaxis.get_major_ticks():
         tick.label.set_fontsize(12)
-    texts = [axes[4].text(i, mutantCount_ls[i], geneMutant_ls[i]) for i in range(nb_show)]
+    texts = [axes[4].text(i, mutantCount_ls[i], geneMutant_ls[i], fontdict={'size': 8}) for i in range(nb_show)]
     adjust_text(texts, arrowprops=dict(arrowstyle='-', color='grey'), ax=axes[4])
     outFile = '{0}/Report.pdf'.format(outDir)
     plt.savefig(outFile, dpi=1000)
