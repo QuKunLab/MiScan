@@ -10,11 +10,11 @@ To predict breast cancer risk with MiScan, Users firstly needs to do:
 
   We recommend using whole exon sequencing data to obtain individual variation
   information, but the results of whole genome sequencing and full-length RNA-seq
-  data are also compatible with the model. Please download test VCF files from [FTP](http://galaxy.ustc.edu.cn:30803/liunianping/miscan/miscan_test_data/)
+  data are also compatible with the model. Please download test VCF files from FTP_
 
 * Maxout model weight
 
-  Users also need a MiScan model weight to perform prediction, well-trained model weight can be downloaded from [here](http://galaxy.ustc.edu.cn:30803/liunianping/miscan/miscan_model/)
+  Users also need a MiScan model weight to perform prediction, well-trained model weight can be downloaded from here_
 
 usage-commandline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,9 +28,14 @@ or with below command::
     python -m MiScan --vcf $dir/SRR5447191.combined.filtered.vcf -o outputs --weight $dir/_MiScan_weights.hdf5
 
 
+docker-commandline
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if with docker, the path of VCF file or weight path shoule be path in Docker environment::
 
-    MiScan -o test_outputs --vcf $dir_in_docker/SRR5447191.combined.filtered.vcf --weight $dir_in_docker/_MiScan_weights.hdf5
+    docker run -v $dir_contains_VCF_MODEL_FILES:/miscan jefferyustc/miscan_command_line:latest \
+     -o test_outputs --vcf sample.vcf --weight weights.hdf5
+
+Attention: `$dir_contains_VCF_MODEL_FILES` should be a dir in your local system that contains sample vcf file and weight file
 
 
 usage-script
@@ -46,3 +51,6 @@ users can also execute this from script::
     )
 
 
+
+.. _FTP: http://galaxy.ustc.edu.cn:30803/liunianping/miscan/miscan_test_data/
+.. _here: http://galaxy.ustc.edu.cn:30803/liunianping/miscan/miscan_model/

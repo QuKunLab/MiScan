@@ -6,7 +6,7 @@ PyPI only
 
 you can easily run::
 
-    pip install scanpy[louvain]
+    pip install MiScan
 
 
 Development Version
@@ -27,6 +27,7 @@ If you're using Docker_, you can use code below to get the newest image::
 
     docker pull jefferyustc/miscan_command_line:latest
 
-you can also select a image version from dockerHub_
+for docker command line usage, please see :doc:`tutorial <tutorial>`,
+you can also select a suitable image version from dockerHub_
 
-.. _dockerHub: https://hub.docker.com/
+.. _dockerHub: https://hub.docker.com/r/jefferyustc/miscan_command_line
