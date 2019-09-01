@@ -3,7 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-|Tag| |PyPI| |Status| |Docs| |Docker| |Licence|
+|Tag| |Licence| |Docker|
+
+|PyPI| |Travis| |Docs| |Status|
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/miscan.svg
     :alt: PyPI latest version
@@ -13,8 +15,9 @@
     :alt: readthedocs auoto build
     :target: https://miscan-cli.readthedocs.io
 
-.. |Docker| image:: https://img.shields.io/docker/cloud/automated/jefferyustc/miscan_command_line
-    :alt: Docker Cloud Automated build
+.. |Docker| image:: https://img.shields.io/docker/cloud/build/jefferyustc/miscan_command_line
+    :alt: Docker Cloud Build Status
+    :target: https://hub.docker.com/r/jefferyustc/miscan_command_line
 
 .. |Licence| image:: https://img.shields.io/github/license/jefferyUstc/MiScan_cli
     :alt: Apache License version2
@@ -26,16 +29,19 @@
 .. |Status| image:: https://img.shields.io/pypi/status/MiScan
     :alt: PyPI - Status
 
+.. |Travis| image:: https://img.shields.io/travis/com/jefferyustc/MiScan_cli
+     :alt: Travis (.com)
+
 MiScan: Maxout-inferred SNV-based cancer prediction model
 ==============================================================
+
 |
+
 .. image:: ./_static/route.png
 
 |
 
-
-
-Here we present a Maxout-inferred SNV-based cancer prediction model (MiScan) for screening of breast cancer patients
+Here we present a Maxout-inferred SNV-based can cer prediction model (MiScan) for screening of breast cancer patients
 using genotype information from blood samples. We coarsened 119,318 variants into 13,885 genomic windows, and trained
 MiScan with coarse-grained mutation information from 986 breast cancer patients and 2,003 healthy people. To promote
 the application of MiScan for breast cancer prediction and prevention, we established an interactive website_, which
@@ -48,6 +54,7 @@ automatically provides a breast cancer risk assessment feedback report from geno
    installation
    tutorial
    references
+   website
    API/index
 
 

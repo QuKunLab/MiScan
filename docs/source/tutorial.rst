@@ -19,7 +19,7 @@ To predict breast cancer risk with MiScan, Users firstly needs to do:
 usage-commandline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Suppose your VCF file and weight are placed in the `$dir` directory, run with code::
+Suppose your VCF file and weight are placed in the ``$dir`` directory, run with code::
 
     MiScan --vcf $dir/SRR5447191.combined.filtered.vcf -o outputs --weight $dir/_MiScan_weights.hdf5
 
@@ -35,7 +35,7 @@ if with docker, the path of VCF file or weight path shoule be path in Docker env
     docker run -v $dir_contains_VCF_MODEL_FILES:/miscan jefferyustc/miscan_command_line:latest \
      -o test_outputs --vcf sample.vcf --weight weights.hdf5
 
-Attention: `$dir_contains_VCF_MODEL_FILES` should be a dir in your local system that contains sample vcf file and weight file
+Attention: ``$dir_contains_VCF_MODEL_FILES`` should be a dir in your local system that contains sample vcf file and weight file
 
 
 usage-script

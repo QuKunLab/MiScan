@@ -1,4 +1,4 @@
-|Tag| |PyPI| |Status| |Docs| |Docker| |Licence|
+|PyPI| |Docs| |Docker| |Travis|
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/miscan.svg
     :alt: PyPI latest version
@@ -8,25 +8,20 @@
     :alt: readthedocs auoto build
     :target: https://miscan-cli.readthedocs.io
 
-.. |Docker| image:: https://img.shields.io/docker/cloud/automated/jefferyustc/miscan_command_line
-    :alt: Docker Cloud Automated build
+.. |Docker| image:: https://img.shields.io/docker/cloud/build/jefferyustc/miscan_command_line
+    :alt: Docker Cloud Build Status
+    :target: https://hub.docker.com/r/jefferyustc/miscan_command_line
 
-.. |Licence| image:: https://img.shields.io/github/license/jefferyUstc/MiScan_cli
-    :alt: Apache License version2
-    :target: http://www.apache.org/licenses/
-
-.. |Tag| image:: https://img.shields.io/github/v/tag/jefferyUstc/Miscan_cli
-    :alt: GitHub tag (latest by date)
-
-.. |Status| image:: https://img.shields.io/pypi/status/MiScan
-    :alt: PyPI - Status
+.. |Travis| image:: https://img.shields.io/travis/com/jefferyustc/MiScan_cli
+    :alt: Travis (.com)
 
 
 MiScan
 ==========
 
 Maxout-inferred SNV-based cancer prediction model | Apache Software License, more info please see documentation_ or
-the website_
+the website_ version(website introduction_)
 
 .. _documentation: https://miscan-cli.readthedocs.io
 .. _website: http://qulab.ustc.edu.cn/miscan
+.. _introduction: https://miscan-cli.readthedocs.io/en/latest/website.html

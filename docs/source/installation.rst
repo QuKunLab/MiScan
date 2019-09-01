@@ -1,6 +1,9 @@
 Installation
 ================
 
+Attention: Before all, users have to install ``bedtools``, please refer to bedtool-documentation_, then be sure to export the
+bedtools to environment path.
+
 PyPI only
 ~~~~~~~~~
 
@@ -31,3 +34,4 @@ for docker command line usage, please see :doc:`tutorial <tutorial>`,
 you can also select a suitable image version from dockerHub_
 
 .. _dockerHub: https://hub.docker.com/r/jefferyustc/miscan_command_line
+.. _bedtool-documentation: https://bedtools.readthedocs.io/en/latest/content/installation.html
