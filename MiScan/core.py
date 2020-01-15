@@ -1,22 +1,22 @@
 # -*- coding: utf-8 -*-
 import operator
-import re
-import shutil
 import warnings
 from collections import Counter
-from os import makedirs, system, popen, environ
-from os.path import exists, join
+from os import environ, makedirs
+from os import system, popen
+from os.path import join, exists
+import re
 
 import keras.backend as K
 import matplotlib as mpl
 import numpy as np
 import pandas as pd
 from scipy.io import mmread
+import shutil
 
-from .utils import get_data, exists_or_mkdir
-from .model import build_model
 from .logging import get_logger
-
+from .model import build_dense_model as build_model
+from .utils import get_data, exists_or_mkdir
 
 mpl.use('Agg')
 import matplotlib.pyplot as plt
@@ -34,8 +34,6 @@ logger = get_logger(__name__)
 def vcf_to_sparse(outDir, inFeaID, inFeaBed, inVcf, featureID):
     """
     convert the vcf to a feature matrix, `matrix.mtx`
-
-
     :param outDir: output directory
     :param inFeaID: `13885fea_exon_cut_100bp_2sample.txt` in dependency_data
     :param inFeaBed: `tcga_13885fea_exon_cut_100bp.bed` in dependency_data
@@ -50,12 +48,10 @@ def vcf_to_sparse(outDir, inFeaID, inFeaBed, inVcf, featureID):
     vcf_list = []
     with open(inVcf) as f:
         for line in f:
-            # TODO need to optimize the regex
             if re.match('#', line):
                 pass
             else:
                 data = line.strip().split('\t')
-                # TODO need to optimize the regex
                 chrom = data[0] if re.match('chr', data[0]) else 'chr' + data[0]
                 start = int(data[1])
                 end = start + 1
@@ -63,8 +59,7 @@ def vcf_to_sparse(outDir, inFeaID, inFeaBed, inVcf, featureID):
                 alt = data[3] + ',' + data[4]
                 vcf_list.append([chrom, start, end, 1, qual, alt])
     vcf_df = pd.DataFrame(vcf_list, columns=['chrom', 'start', 'end', 'sample_name', 'qual', 'alt'])
-    vcf_df.sort_values(by=['chrom', 'start'], ascending=True, inplace=True)  # 'snp_sampleID.bed'
-    # TODO check this
+    vcf_df.sort_values(by=['chrom', 'start'], ascending=True, inplace=True)
     outSnpBedFile = join(outDir, 'snp_sampleID.bed')
     vcf_df.to_csv(outSnpBedFile, sep='\t', header=None, index=None)
     # --------------------------------------------------
@@ -123,7 +118,8 @@ def generate_report(inDir, outDir, y_pred_pat):
     """
     generate report for single sample, including Cancer Risk Prediction | Top Gene Mutation Sites
 
-    :param inDir: for historical reason, actually, it's the path of `MISCAN.norm.trainPred.txt` and 'MISCAN.pat.trainPred.txt' in dependency_data
+    :param inDir: for historical reason, actually, it's the path of `MISCAN.norm.trainPred.txt` and
+    'MISCAN.pat.trainPred.txt' in dependency_data
     :param outDir: output directory
     :param y_pred_pat: risk_to_be_patient from func `prediction`
     :return:
@@ -147,14 +143,13 @@ def generate_report(inDir, outDir, y_pred_pat):
 
     axes[2].set_position(Bbox([[0.09, 0.57], [0.95, 0.83]]))
 
-    trainPat_file = inDir[0]
-    trainNorm_file = inDir[1]
-    trainPat_ay = np.loadtxt(trainPat_file)
-    trainNorm_ay = np.loadtxt(trainNorm_file)
-
-    g = sns.kdeplot(list(trainPat_ay), label='trainPat', ax=axes[2],
+    train_pat = pd.read_csv(inDir[0], header=None).values
+    train_norm = pd.read_csv(inDir[1], header=None).values
+    train_pat = np.squeeze(train_pat, axis=1)
+    train_norm = np.squeeze(train_norm, axis=1)
+    g = sns.kdeplot(train_pat, label='trainPat', ax=axes[2],
                     shade=True, color='#ffb7ce')
-    g = sns.kdeplot(list(trainNorm_ay), label='trainNorm', ax=axes[2],
+    g = sns.kdeplot(train_norm, label='trainNorm', ax=axes[2],
                     shade=True, color='#95d0fc')
     axes[2].set_xlabel('Cancer risk', size=15)
     axes[2].set_ylabel('Density', size=15)

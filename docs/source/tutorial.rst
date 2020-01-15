@@ -52,5 +52,5 @@ users can also execute this from script::
 
 
 
-.. _FTP: http://galaxy.ustc.edu.cn:30803/liunianping/miscan/miscan_test_data/
-.. _here: http://galaxy.ustc.edu.cn:30803/liunianping/miscan/miscan_model/
+.. _FTP: http://galaxy.ustc.edu.cn:30803/MiScan/miscan_test_data/
+.. _here: http://galaxy.ustc.edu.cn:30803/MiScan/miscan_model/MiScan_weight.h5

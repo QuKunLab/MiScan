@@ -14,27 +14,26 @@ MiScan utils
 ~~~~~~~~~~~~~~~~
 
 .. autosummary::
+    :toctree: .
 
     utils.exists_or_mkdir
     utils.file_exists
     utils.get_data
 
-MiScan Core
-~~~~~~~~~~~~~~~~
-
-.. autosummary::
-    logging.get_logger
-
 MiScan model
 ~~~~~~~~~~~~~~~~
 
 .. autosummary::
+    :toctree: .
+
     model.build_model
 
 MiScan Core
 ~~~~~~~~~~~~~~~~
 
 .. autosummary::
+    :toctree: .
+
     core.vcf_to_sparse
     core.prediction
     core.generate_report

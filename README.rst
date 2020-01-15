@@ -24,4 +24,5 @@ the website_ version(website introduction_)
 
 .. _documentation: https://miscan-cli.readthedocs.io
 .. _website: http://qulab.ustc.edu.cn/miscan
+.. _QunKunLab: https://github.com/QuKunLab/MiScan
 .. _introduction: https://miscan-cli.readthedocs.io/en/latest/website.html

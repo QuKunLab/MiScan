@@ -1,4 +1,4 @@
-from MiScan.model import build_model
+from MiScan.model import build_dense_model as build_model
 import unittest
 
 

@@ -22,9 +22,9 @@ sys.path.insert(0, str(HERE))
 project = 'MiScan'
 copyright = '2019, Qulab USTC'
 author = 'Qulab USTC'
-version = '1.0.1'
+version = '1.0.2'
 # The full version, including alpha/beta/rc tags
-release = '1.0.1'
+release = '1.0.2'
 
 # -- General configuration ---------------------------------------------------
 

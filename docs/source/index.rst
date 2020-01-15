@@ -32,7 +32,7 @@
 .. |Travis| image:: https://img.shields.io/travis/com/jefferyustc/MiScan_cli
      :alt: Travis (.com)
 
-MiScan: Maxout-inferred SNV-based cancer prediction model
+MiScan: mutation-inferred screening model of breast cancer
 ==============================================================
 
 |
@@ -41,9 +41,9 @@ MiScan: Maxout-inferred SNV-based cancer prediction model
 
 |
 
-Here we present a Maxout-inferred SNV-based can cer prediction model (MiScan) for screening of breast cancer patients
+Here we present MiScan: mutation-inferred screening model of cancer for screening of breast cancer patients
 using genotype information from blood samples. We coarsened 119,318 variants into 13,885 genomic windows, and trained
-MiScan with coarse-grained mutation information from 986 breast cancer patients and 2,003 healthy people. To promote
+MiScan with coarse-grained mutation information from 1183 breast cancer patients and 3232 healthy people. To promote
 the application of MiScan for breast cancer prediction and prevention, we established an interactive website_, which
 automatically provides a breast cancer risk assessment feedback report from genotype information as input.
 

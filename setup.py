@@ -7,15 +7,15 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name="MiScan",
-    version="1.0.1.post1",
+    version="1.1.1",
     author='Qulab USTC',
     author_email="jeffery_cpu@163.com",
-    description="Maxout-inferred SNV-based cancer prediction model",
+    description="MiScan: mutation-inferred screening model of cancer",
     long_description=long_description,
-    long_description_content_type="text/markdown",
+    long_description_content_type="text/x-rst",
     url="https://github.com/QuKunLab/MiScan",
     project_urls={
-        'MiScan website': 'http://galaxy.ustc.edu.cn',
+        'MiScan website': 'http://qulab.ustc.edu.cn/miscan',
     },
     zip_safe=False,
     keywords="deep learning SNV breast cancer prediction",
