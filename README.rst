@@ -19,7 +19,7 @@
 MiScan
 ==========
 
-Maxout-inferred SNV-based cancer prediction model | Apache Software License, more info please see documentation_ or
+Mutation-inferred Screening model of cancer (MiScan) | Apache Software License, more info please see documentation_ or
 the website_ version(website introduction_)
 
 .. _documentation: https://miscan-cli.readthedocs.io
