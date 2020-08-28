@@ -20,9 +20,12 @@ MiScan
 ==========
 
 Mutation-inferred Screening model of cancer (MiScan) | Apache Software License, more info please see documentation_ or
-the website_ version(website introduction_)
+the website_ version(website introduction_).
+
+Processed data matrix used in this study can be found at dataMtx_.
 
 .. _documentation: https://miscan-cli.readthedocs.io
 .. _website: http://qulab.ustc.edu.cn/miscan
 .. _QunKunLab: https://github.com/QuKunLab/MiScan
 .. _introduction: https://miscan-cli.readthedocs.io/en/latest/website.html
+.. _dataMtx: https://github.com/QuKunLab/MiScan/tree/master/data
